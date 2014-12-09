@@ -1,9 +1,34 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+.header {
+  display: relative;
+  height: 15%;
+  width: 100%;
+  border-bottom: 1px black solid;
 }
-th {
-  text-align: left;
+
+.logo {
+  position: inline-block;
+}
+
+.logo h1 {
+  text-align: center;
+}
+
+.new {
+  position: inline-block;
+  text-align: right;
+  margin-right: 5%;
+}
+
+.sidebar {
+  position: absolute;
+  width: 33%;
+  display: inline-block;
+  height: 100%;
+  border-right: 1px black solid;
+}
+
+.view {
+  display: inline-block;
+  width: 67%;
+  float: right;
 }

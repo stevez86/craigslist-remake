@@ -1,0 +1,16 @@
+<div class="view">
+  <h1><% if @articles.map { |article| article.category.id }.uniq.length > 1 %>
+      <%= "All" %>
+    <% else %>
+      <%= @articles.first.category.name %>
+    <% end %></h1>
+    <ul>
+  <% @articles.each do |article| %>
+    <li>
+      <h3><%= article.title %> - $<%= article.price %></h3>
+      <p>By <%= article.name %></p>
+      <p><%= article.body %></p>
+    </li>
+  <% end %>
+  </ul>
+</div>
