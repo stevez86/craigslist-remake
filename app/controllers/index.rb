@@ -1,11 +1,4 @@
-# Pseudocode
-  # get '/' do
-  # get '/category/:id'
-  # get '/article/:id'
-  # get '/article/:id/edit'
-  # put '/article/:id'
-  # post '/article'
-  # delete '/article/:id'
+require 'faker'
 
 get '/' do #DONE
   @articles = Article.last(10)
@@ -41,6 +34,12 @@ get '/article/:id/edit' do
   @categories = Category.all
 
   erb :edit
+end
+
+get '/random_article' do
+  @articles = Article.create(title: Faker::Company.bs, name: Faker::Name.name, category: Category.find_or_create_by(name: Faker::Commerce.department), price: Faker::Number.number(2).to_i, address: "#{Faker::Address.street_address}, #{Faker::Address.city}, #{Faker::Address.state_abbr}", email: Faker::Internet.email('Nancy'), body: Faker::Lorem.paragraph(rand(1..4)))
+  @categories = Category.all
+  redirect "/article/#{@articles.id}"
 end
 
 put '/article/:id' do #DONE

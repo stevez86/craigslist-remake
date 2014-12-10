@@ -15,14 +15,15 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>Devmarteve-list</title>
+  <title>DevmarteveList</title>
 </head>
 <body>
   <div class="header">
-    <div class="logo"><h1>Devmarteve-list</h1></div>
+    <div class="logo"><h1>Devmarteve<span id="logo_list">List</span></h1></div>
     <div class="new"><a href="/article/new">Create article</a></div>
   </div>
   <div class="sidebar">
+    <h4>Categories:</h4>
     <ul>
       <% @categories.each do |category| %>
         <li><a href='/category/<%= category.id %>'><%= category.name %></a></li>
