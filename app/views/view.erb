@@ -1,14 +1,15 @@
 <div class="view">
   <h1><% if @articles.map { |article| article.category.id }.uniq.length > 1 %>
-      <%= "All" %>
+      Most recent articles...
+    <% elsif @articles.first == nil %>
+      No Articles Available - 607
     <% else %>
       <%= @articles.first.category.name %>
     <% end %></h1>
     <ul>
   <% @articles.each do |article| %>
     <li>
-      <h3><%= article.title %> - $<%= article.price %></h3>
-      <p>By <%= article.name %></p>
+      <h3><a href="/article/<%=article.id%>"><%= article.title.capitalize %></a> - $<%= article.price %> By <%= article.name %></h3>
       <p><%= article.body %></p>
     </li>
   <% end %>
