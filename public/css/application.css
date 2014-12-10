@@ -27,8 +27,9 @@
   border-right: 1px black solid;
 }
 
-.view {
+.view, .edit {
   display: inline-block;
   width: 67%;
   float: right;
 }
+
